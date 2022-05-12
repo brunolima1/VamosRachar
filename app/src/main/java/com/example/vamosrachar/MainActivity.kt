@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import java.util.*
 
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
@@ -35,15 +34,24 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 val pessoasTstr : String = pessoas.text.toString()
                 pessoasT = pessoasTstr.toDouble()
             }
-0
-            if(conta.text.isNotEmpty() and conta.text.isNotEmpty()){
+
+            if(conta.text.isNotEmpty() and pessoas.text.isNotEmpty()){
                 val valorF: Double = valorT/pessoasT
                 var valorFstr : String = valorF.toString()
                 if(valorFstr == "Infinity"){
                     valorFstr = "0.0"
                 }
-                resultado!!.text = ("R$: ${valorFstr}0")
+                if(valorFstr.length > 4){
+                    valorFstr = valorFstr.removeRange(5, valorFstr.length)
+                }
+                resultado!!.text = ("R$: ${valorFstr}")
             }
+
+            if(conta.text.isEmpty() or pessoas.text.isEmpty()){
+                resultado!!.text = ("R$: 0.00")
+
+            }
+
         }
 
         conta.addTextChangedListener{
@@ -71,9 +79,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
     }
     override fun onInit(status: Int){
-        if(status == TextToSpeech.SUCCESS){
-            val result = tts!!.setLanguage(Locale.US)
-        }
+
     }
 
     private fun speak(){
