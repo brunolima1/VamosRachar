@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vamos Rachar</string>
+    <string name="money">Dinheiro</string>
+    <string name="moneyAmount">Quantidade para dividir</string>
+    <string name="people">Pessoas</string>
+    <string name="share">Compartilhar</string>
+    <string name="speak">Falar Resultado</string>
+    <string name="result">R$: 0.00</string>
+    <string name="peopleCount">Quantidade de Pessoas</string>
+</resources>

@@ -19,23 +19,23 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         setContentView(R.layout.activity_main)
         val listenButton: Button = findViewById(R.id.listen)
         val shareButton: Button = findViewById(R.id.share)
-        val conta : EditText = findViewById(R.id.money)
-        val pessoas : EditText = findViewById(R.id.peopleCount)
+        val account : EditText = findViewById(R.id.money)
+        val people : EditText = findViewById(R.id.peopleCount)
         resultado = findViewById(R.id.result)
 
         fun updateValue(){
             var valorT = 0.0
             var pessoasT = 0.0
-            if(conta.text.isNotEmpty()){
-                val valorTstr : String = conta.text.toString()
+            if(account.text.isNotEmpty()){
+                val valorTstr : String = account.text.toString()
                 valorT = valorTstr.toDouble()
             }
-            if(pessoas.text.isNotEmpty()){
-                val pessoasTstr : String = pessoas.text.toString()
+            if(people.text.isNotEmpty()){
+                val pessoasTstr : String = people.text.toString()
                 pessoasT = pessoasTstr.toDouble()
             }
 
-            if(conta.text.isNotEmpty() and pessoas.text.isNotEmpty()){
+            if(account.text.isNotEmpty() and people.text.isNotEmpty()){
                 val valorF: Double = valorT/pessoasT
                 var valorFstr : String = valorF.toString()
                 if(valorFstr == "Infinity"){
@@ -44,31 +44,31 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 if(valorFstr.length > 4){
                     valorFstr = valorFstr.removeRange(5, valorFstr.length)
                 }
-                resultado!!.text = ("R$: ${valorFstr}")
+                resultado!!.text = ("R$: ${valorFstr}" + "@string/money")
             }
 
-            if(conta.text.isEmpty() or pessoas.text.isEmpty()){
+            if(account.text.isEmpty() or people.text.isEmpty()){
                 resultado!!.text = ("R$: 0.00")
 
             }
 
         }
 
-        conta.addTextChangedListener{
+        account.addTextChangedListener{
             updateValue()
         }
 
-        pessoas.addTextChangedListener{
+        people.addTextChangedListener{
             updateValue()
         }
 
         tts = TextToSpeech(this, this)
 
-        listenButton!!.setOnClickListener{
+        listenButton.setOnClickListener{
             speak()
         }
 
-        shareButton!!.setOnClickListener{
+        shareButton.setOnClickListener{
             val myIntent = Intent(Intent.ACTION_SEND)
             myIntent.type = "type/palin"
             val shareBody = "Resultado VamosRachar"
