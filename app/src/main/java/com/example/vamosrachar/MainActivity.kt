@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
+import java.util.*
 
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
@@ -44,12 +45,22 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 if(valorFstr.length > 4){
                     valorFstr = valorFstr.removeRange(5, valorFstr.length)
                 }
-                resultado!!.text = ("R$: ${valorFstr}" + "@string/money")
+                if(Locale.getDefault().displayLanguage == "português"){
+                    resultado!!.text = ("${valorFstr} R$ para cada")
+                }
+                else{
+                    resultado!!.text = ("${valorFstr} $ for each")
+                }
             }
 
             if(account.text.isEmpty() or people.text.isEmpty()){
                 resultado!!.text = ("R$: 0.00")
-
+                if(Locale.getDefault().displayLanguage == "português"){
+                    resultado!!.text = ("0.00 R$")
+                }
+                else{
+                    resultado!!.text = ("0.00 $")
+                }
             }
 
         }
