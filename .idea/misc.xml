@@ -5,7 +5,12 @@
       <map>
         <entry key="..\:/Users/ADM/AndroidStudioProjects/VamosRachar/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1145" />
         <entry key="..\:/Users/ADM/AndroidStudioProjects/VamosRachar/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1145" />
-        <entry key="..\:/Users/ADM/AndroidStudioProjects/VamosRachar/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/ADM/AndroidStudioProjects/VamosRachar/app/src/main/res/layout-land/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/ADM/AndroidStudioProjects/VamosRachar/app/src/main/res/layout-sw320dp/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/ADM/AndroidStudioProjects/VamosRachar/app/src/main/res/layout-sw600dp-land/activity_main.xml" value="0.146875" />
+        <entry key="..\:/Users/ADM/AndroidStudioProjects/VamosRachar/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/ADM/AndroidStudioProjects/VamosRachar/app/src/main/res/layout-sw720dp/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/ADM/AndroidStudioProjects/VamosRachar/app/src/main/res/layout/activity_main.xml" value="0.33" />
       </map>
     </option>
   </component>
